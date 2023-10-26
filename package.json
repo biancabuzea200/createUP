@@ -1,0 +1,17 @@
+{
+  "name": "createup",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "createUP.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lukso/lsp-factory.js": "^3.1.1",
+    "dotenv": "^16.3.1",
+    "web3": "^4.2.1"
+  }
+}
