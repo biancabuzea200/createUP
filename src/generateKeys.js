@@ -11,4 +11,4 @@ async function getBalance() {
     console.log("My balance: " + web3.utils.fromWei(balance, "ether") + " LYXt");
 }
 
-getBalance();
+getBalance(); 
