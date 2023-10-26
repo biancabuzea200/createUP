@@ -6,7 +6,7 @@ import erc725schema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json' as
 // Our static variables
 const SAMPLE_PROFILE_ADDRESS = '0xB031363560403179Aac100d51864e27fFF4D7807';
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
-const IPFS_GATEWAY = 'https://2eff.lukso.dev/ipfs/';
+const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
 
 // Parameters for ERC725 Instance
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
