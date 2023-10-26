@@ -1,7 +1,6 @@
 import { ERC725 } from '@erc725/erc725.js'; // Library to check the interface of a profile
-import erc725schema from '@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json' assert { type: 'json' };
 import Web3 from 'web3';
-
+import erc725schema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json' assert { type: "json" };
 
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
 const SAMPLE_PROFILE_ADDRESS = '0x9139def55c73c12bcda9c44f12326686e3948634';
