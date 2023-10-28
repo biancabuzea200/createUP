@@ -1,42 +1,33 @@
+// Import and Network Setup
+
 ```js
-import { LSPFactory } from "@lukso/lsp-factory.js";
+//0x2875d1733346bF4618485a91F2D9E5FB544f4fc5
 import Web3 from "web3";
-const web3 = new Web3("https://rpc.testnet.lukso.network");
-import dotenv from "dotenv/config";
+import { ERC725 } from "@erc725/erc725.js";
+import lsp3ProfileSchema from "@erc725/erc725.js/schemas/LSP3ProfileMetadata.json" assert { type: "json" };
 
-const PRIVATE_KEY = process.env.MY_PRIVATE_KEY;
-const EOA = web3.eth.accounts.privateKeyToAccount(PRIVATE_KEY);
+// Our static variables
+//const SAMPLE_PROFILE_ADDRESS = '0x6979474Ecb890a8EFE37daB2b9b66b32127237f7';
+const SAMPLE_PROFILE_ADDRESS = "0xB031363560403179Aac100d51864e27fFF4D7807";
+const RPC_ENDPOINT = "https://rpc.testnet.lukso.network";
+const IPFS_GATEWAY = "https://api.universalprofile.cloud/ipfs";
 
-// Initialize the LSPFactory with the Testnet RPC endpoint and your EOA's private key, which will deploy the UP smart contracts
-const lspFactory = new LSPFactory("https://rpc.testnet.lukso.network/", {
-  deployKey: PRIVATE_KEY,
-  chainId: 4201,
-});
+// Parameters for ERC725 Instance
+const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
+const config = { ipfsGateway: IPFS_GATEWAY };
 
-// Deploy our Universal Profile
-async function createUniversalProfile() {
-  const deployedContracts = await lspFactory.UniversalProfile.deploy({
-    controllerAddresses: [EOA.address], // our EOA that will be controlling the UP
-    lsp3Profile: {
-      name: "My Universal Profile",
-      description: "My Cool Universal Profile",
-      tags: ["Public Profile"],
-      links: [
-        {
-          title: "My Website",
-          url: "https://my-website.com/",
-        },
-      ],
-    },
-  });
-
-  const myUPAddress = deployedContracts.LSP0ERC725Account.address;
-  console.log("my Universal Profile address: ", myUPAddress);
-
-  return deployedContracts;
+async function fetchProfile(address) {
+  try {
+    const profile = new ERC725(lsp3ProfileSchema, address, provider, config);
+    return await profile.fetchData();
+  } catch (error) {
+    console.log(error);
+    return console.log("This is not an ERC725 Contract");
+  }
 }
 
-createUniversalProfile();
+// Debug
+fetchProfile(SAMPLE_PROFILE_ADDRESS).then((profileData) =>
+  console.log(JSON.stringify(profileData, undefined, 2))
+);
 ```
-
-2
