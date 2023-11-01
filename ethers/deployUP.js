@@ -3,7 +3,6 @@
 // So only older versions of node will work.
 // You can do this with `nvm use 16.0.0`
 
-import Web3 from 'web3';
 import { LSPFactory } from '@lukso/lsp-factory.js';
 import dotenv from 'dotenv/config';
 import { ethers } from "ethers";
@@ -14,7 +13,7 @@ const myEOA = new ethers.Wallet(PRIVATE_KEY);
 
 const lspFactory = new LSPFactory('https://rpc.testnet.lukso.network/', {
     deployKey: PRIVATE_KEY,
-    chainId: 4201,
+    chainId: 4201, // LUKSO Testnet
 });
 
 async function createUniversalProfile() {
