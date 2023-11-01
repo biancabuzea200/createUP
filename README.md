@@ -52,7 +52,7 @@ This repo aims to get you up to speed with creating a Universal Profile on the L
 
 ### Built With
 
-- [![Next][Node-js]][Node-JS-url]
+- [Node.js](https://nodejs.org/en)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
