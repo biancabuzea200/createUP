@@ -26,6 +26,14 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
+<!-- ABOUT THE PROJECT -->
+
+# Create a Universal Profile Programmatically and Read Profile Data
+
+## About The Project
+
+This repo aims to get you up to speed with creating a Universal Profile on the LUKSO blockchain programmatically and reading data from it.
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -48,12 +56,6 @@
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
-
-<!-- ABOUT THE PROJECT -->
-
-## About The Project
-
-This repo aims to get you up to speed with creating a Universal Profile on the LUKSO blockchain programmatically and reading data from it .
 
 ### Built With
 
